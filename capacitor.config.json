@@ -1,0 +1,13 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "movies-follower",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

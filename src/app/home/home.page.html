@@ -1,0 +1,9 @@
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <app-message *ngFor="let movie of movies" [message]="movie"></app-message>
+  </ion-list>
+</ion-content>

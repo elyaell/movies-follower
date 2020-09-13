@@ -1,0 +1,7 @@
+{
+  "name": "movies-follower",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
