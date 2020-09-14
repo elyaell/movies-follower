@@ -9,11 +9,12 @@ export interface Movie {
 
 export interface FullMovie {
     id: number;
+    backdrop_path: string;
     original_language: string;
     original_title: string;
     title: string;
     overview: string;
-    genre: Genre[];
+    genres: Genre[];
 }
 
 export interface Genre {

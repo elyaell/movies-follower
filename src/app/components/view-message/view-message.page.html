@@ -7,7 +7,11 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true" *ngIf="movie">
+
+  <img src="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}" />
+
   <ion-item>
     <ion-label class="ion-text-wrap">
       <h2>
@@ -17,7 +21,13 @@
       </h2>
     </ion-label>
   </ion-item>
-  
+
+  <ng-container *ngFor="let genre of movie.genres">
+    <ion-chip>
+      <ion-label color="secondary">{{genre.name}}</ion-label>
+    </ion-chip>
+  </ng-container>
+
   <div class="ion-padding">
     <h1>{{ movie.subject }}</h1>
     <p>

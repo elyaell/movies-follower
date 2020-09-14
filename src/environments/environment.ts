@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiPath: "https://api.themoviedb.org",
   apiKey: "{{yourApiKey}}",
+  apiPath: "https://api.themoviedb.org/3",
   language: "fr-FR"
 };
 
