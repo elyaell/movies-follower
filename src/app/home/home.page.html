@@ -12,4 +12,12 @@
   <ion-list>
     <app-message *ngFor="let movie of movies" [message]="movie"></app-message>
   </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Chargement...">
+  </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>

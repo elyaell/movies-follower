@@ -11,8 +11,8 @@ export class DataService extends HttpService {
         super(http);
     }
 
-    public getMovies(): Observable < Movie[] > {
-        return this.get(this.apiPath + "/3/movie/now_playing?api_key=" + this.apiKey + "&language=" + this.language + "&page=1");
+    public getMovies(page : number = 1): Observable < Movie[] > {
+        return this.get(this.apiPath + "/3/movie/now_playing?api_key=" + this.apiKey + "&language=" + this.language + "&page=" + page);
     }
 
     public getMessageById(id : number): Movie {
