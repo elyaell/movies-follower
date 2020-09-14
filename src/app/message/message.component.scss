@@ -16,9 +16,14 @@ ion-item h2 {
 ion-item p {
   text-overflow: ellipsis;
   overflow: hidden;
- // white-space: nowrap;
-  width: 100%;
- // height : 150px;
+  white-space: pre-wrap;
+  padding-right:4px;
+  width: 90%;
+  height : 100px;
+}
+
+.content {
+  background-color: red !important;
 }
 
 img {

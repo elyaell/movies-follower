@@ -11,9 +11,7 @@
           <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
         </div>
         <div class="ion-item">
-          <p>
-            {{ message.overview }}
-          </p>
+          <p>{{ message.overview | ellipsis }}</p>
         </div>
       </div>
     </div>

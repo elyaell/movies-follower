@@ -1,4 +1,10 @@
-<ion-content [fullscreen]="true">
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Sorties cinéma</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="primary">
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
