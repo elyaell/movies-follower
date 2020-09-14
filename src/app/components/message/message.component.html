@@ -1,0 +1,19 @@
+<ion-item *ngIf="movie" [detail]="false" (click)="showMovieDetails()">
+  <ion-label class="ion-text-wrap">
+    <div class="flex-container">
+      <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" height="150px" />
+      <div>
+        <h2>
+          {{ movie.title }}
+        </h2>
+        <div class="date">
+          <ion-note><span class="release-date">Date de sortie</span> : {{ movie.release_date }}</ion-note>
+          <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+        </div>
+        <div class="ion-item">
+          <p>{{ movie.overview | ellipsis }}</p>
+        </div>
+      </div>
+    </div>
+  </ion-label>
+</ion-item>

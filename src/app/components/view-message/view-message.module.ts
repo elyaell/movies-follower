@@ -8,7 +8,7 @@ import { ViewMessagePage } from './view-message.page';
 import { IonicModule } from '@ionic/angular';
 
 import { ViewMessagePageRoutingModule } from './view-message-routing.module';
-import { DataService } from '../services/data.service';
+import { DataService } from '../../services/data.service';
 
 @NgModule({
   imports: [

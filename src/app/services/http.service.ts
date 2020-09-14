@@ -2,7 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {environment} from 'src/environments/environment';
-import {Movie} from '../models/movie.model';
+import {FullMovie, Movie} from '../models/movie.model';
 
 @Injectable({providedIn: 'root'})
 export class HttpService {
@@ -12,8 +12,12 @@ export class HttpService {
 
     constructor(private http : HttpClient) {}
 
-    get(url : string): Observable < Movie[] > {
+    get(url: string): Observable < Movie[] > {
         return this.http.get<Movie[]>(url);
+    }
+    
+    getOne(url: string): Observable <FullMovie> {
+        return this.http.get<FullMovie>(url);
     }
 
 }

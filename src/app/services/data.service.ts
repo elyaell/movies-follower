@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Movie} from '../models/movie.model'
+import {FullMovie, Movie} from '../models/movie.model'
 import {HttpService} from './http.service';
 
 @Injectable({providedIn: 'root'})
@@ -12,10 +12,11 @@ export class DataService extends HttpService {
     }
 
     public getMovies(page : number = 1): Observable < Movie[] > {
-        return this.get(this.apiPath + "/3/movie/now_playing?api_key=" + this.apiKey + "&language=" + this.language + "&page=" + page);
+        return this.get(this.apiPath + "/movie/now_playing?api_key=" + this.apiKey + "&language=" + this.language + "&page=" + page);
     }
 
-    public getMessageById(id : number): Movie {
-        return null;
+    public getMovie(id: string): Observable<FullMovie> {
+        return this.getOne(this.apiPath + "/movie/" + id + "?api_key=" + this.apiKey + "&language=" + this.language) ;
     }
+
 }

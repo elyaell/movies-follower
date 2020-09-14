@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../services/data.service';
-import { Movie } from '../models/movie.model';
+import { DataService } from '../../services/data.service';
+import { FullMovie } from '../../models/movie.model';
 
 @Component({
   selector: 'app-view-message',
@@ -9,7 +9,8 @@ import { Movie } from '../models/movie.model';
   styleUrls: ['./view-message.page.scss'],
 })
 export class ViewMessagePage implements OnInit {
-  public message: Movie;
+  movie: FullMovie;
+  id: string;
 
   constructor(
     private data: DataService,
@@ -17,8 +18,14 @@ export class ViewMessagePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.message = this.data.getMessageById(parseInt(id, 10));
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.fetchMovie();
+  }
+
+  fetchMovie() {
+    this.data.getMovie(this.id).subscribe(response => {
+      this.movie = response;
+    })
   }
 
   getBackButtonText() {

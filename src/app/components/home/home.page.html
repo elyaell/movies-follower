@@ -10,7 +10,7 @@
   </ion-refresher>
 
   <ion-list>
-    <app-message *ngFor="let movie of movies" [message]="movie"></app-message>
+    <app-message *ngFor="let movie of movies" [movie]="movie"></app-message>
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">

@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { MessageComponent } from './message.component';
-import { EllipsisPipe } from '../pipes/ellipsis.pipe';
+import { EllipsisPipe } from '../../pipes/ellipsis.pipe';
 
 @NgModule({
   imports: [ CommonModule, FormsModule, IonicModule, RouterModule],

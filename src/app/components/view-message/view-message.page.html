@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+      <h2>{{ movie?.title }}</h2>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="movie">
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+      <h2>
+        <span class="date">
+          <ion-note>{{ movie.release_date }}</ion-note>
+        </span>
+      </h2>
+    </ion-label>
+  </ion-item>
+  
+  <div class="ion-padding">
+    <h1>{{ movie.subject }}</h1>
+    <p>
+      {{ movie.overview }}
+    </p>
+  </div>
+</ion-content>

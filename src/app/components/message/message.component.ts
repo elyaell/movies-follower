@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Movie } from '../models/movie.model';
+import { Router } from '@angular/router';
+import { Movie } from 'src/app/models/movie.model';
 
 @Component({
   selector: 'app-message',
@@ -7,11 +8,15 @@ import { Movie } from '../models/movie.model';
   styleUrls: ['./message.component.scss'],
 })
 export class MessageComponent implements OnInit {
-  @Input() message: Movie;
+  @Input() movie: Movie;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
+
+  showMovieDetails() {
+    this.router.navigate(['/movie', this.movie.id]);
+  }
 
   isIos() {
     const win = window as any;
